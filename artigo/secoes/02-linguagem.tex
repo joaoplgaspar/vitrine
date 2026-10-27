@@ -1,0 +1,41 @@
+% DONO: João Pedro (exemplo, construções) + Nathan (decisões)   ·   ESPAÇO: ~1,25 página
+\section{A linguagem}
+% O enunciado pede: programa de exemplo, as construções principais e TRÊS
+% decisões de projeto justificadas, cada uma com a alternativa descartada.
+
+\subsection{Exemplo}
+% Usar exemplos/validos/promocao_outubro.vitrine e o recibo. Explicar em
+% prosa: produto, regra quando/entao, carrinho, calcular.
+\begin{lstlisting}
+produto camiseta = R$ 49,90;
+produto caneca   = R$ 29,90;
+frete = R$ 15,00;
+regra leve3 { quando qtd(camiseta) >= 3
+              entao desconto 20% em camiseta; }
+regra frete_gratis { quando total >= R$ 150,00
+                     entao frete R$ 0,00; }
+carrinho { camiseta x 3; caneca x 1; }
+calcular;
+\end{lstlisting}
+
+\subsection{Construções e tipos}
+% - Tipos: inteiro, dinheiro (centavos inteiros), percentual (só em desconto).
+% - Precedência pela cadeia expressao > termo > fator. Ex.:
+%   R$ 10,00 + R$ 2,00 * 3 = R$ 16,00.
+% - Escopo global único; declarar antes de usar.
+% - Uma tabela pequena de tipos (docs/especificacao.md, seção 5).
+
+\subsection{Decisões de projeto}
+% Três decisões (guia, seção 6). Para cada uma: decisão, alternativa, por quê.
+% 1. Descontos aditivos sobre o preço original x descontos compostos.
+%    SEJAM HONESTOS: com composição a soma nunca passa de 100%, então a
+%    escolha cria o invariante que a verificação protege. Digam por que
+%    ainda assim faz sentido (previsibilidade para o lojista).
+% 2. total = subtotal antes dos descontos x total corrente na ordem das
+%    regras (que tornaria o resultado dependente da ordem e invalidaria a
+%    análise do conjunto). Caso concreto: no exemplo canônico, R$ 179,60
+%    antes do desconto e R$ 149,66 depois, com frete grátis a partir de
+%    R$ 150,00.
+% 3. Análise conservadora por faixas x soma ingênua (recusa faixas
+%    exclusivas, o caso mais comum) x solver exato (SMT: biblioteca pronta,
+%    proibida pelo enunciado para a semântica).

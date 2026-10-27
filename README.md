@@ -45,6 +45,16 @@ erro semantico [conflito_120.vitrine:7:23]
    quando promo_a e promo_b se aplicam juntas
 ```
 
+## No navegador
+
+O mesmo compilador roda no navegador (Pyodide), com editor, recibo ao vivo,
+abas de tokens/árvore/AST e link para compartilhar o programa.
+Publicado pelo GitHub Pages a cada push na `main`. Para rodar local:
+
+```bash
+python web/construir.py --servir      # abre em http://localhost:8000
+```
+
 ## Testes e avaliação
 
 ```bash
@@ -63,6 +73,8 @@ exemplos/validos/        3+ programas que rodam, com a saída esperada (.saida)
 exemplos/invalidos/      programas que devem ser recusados
 tests/                   pytest
 avaliacao/               casos rotulados + script de medição
+web/                     compilador no navegador (Pyodide)
+artigo/                  artigo em LaTeX (ACM sigconf), uma seção por arquivo
 ```
 
 ## Divisão de trabalho

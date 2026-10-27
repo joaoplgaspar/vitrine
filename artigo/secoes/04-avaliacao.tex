@@ -1,0 +1,36 @@
+% DONO: Kauê (+ números do Nathan)   ·   ESPAÇO: ~1,5 página — A SEÇÃO DE MAIOR PESO
+\section{Avaliação}
+% Opção B do enunciado: a verificação semântica funciona?
+%
+% Método:
+% - N programas rotulados em avaliacao/casos/ (meta: 20 a 30), cada um com
+%   gabarito "aceita" ou "recusa <categoria>".
+% - Separar SEMENTES (13 casos gerados com IA, que já incluíam falhas
+%   conhecidas) dos CASOS DA EQUIPE (escritos à mão, sem olhar o código).
+%   Isso precisa estar explícito no texto.
+% - Métricas: detectados, escapes, falsos positivos, aceitos corretamente;
+%   tempo médio de verificação.
+%
+% Resultados: copiar a tabela gerada por `python avaliacao/rodar.py`.
+% Resultado atual só das sementes (27/10), como referência:
+%   detecção 6/7 (86%), falsos positivos 2/6 (33%), 1 escape, ~0,65 ms.
+%
+% Interpretação (o slide 20 exige):
+% - De onde vêm os falsos positivos (c04: forma não normalizada; c05:
+%   integralidade ignorada) e o escape (m02).
+% - Antes x depois das melhorias do Nathan.
+% - O que os números NÃO permitem concluir: os casos não vêm de lojas reais,
+%   a amostra é pequena, os autores escreveram os casos e o verificador.
+\begin{table}[h]
+  \caption{Resultados da verificação semântica (preencher)}
+  \begin{tabular}{lrrrr}
+    \toprule
+    categoria & casos & detectado & escape & falso pos. \\
+    \midrule
+    conflito\_desconto & & & & \\
+    conflito\_frete & & & & \\
+    regra\_morta & & & & \\
+    controles (aceita) & & & & \\
+    \bottomrule
+  \end{tabular}
+\end{table}
