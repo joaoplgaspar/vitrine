@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vitrine</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <div class="marca">
+      <h1>Vitrine</h1>
+      <span>a linguagem onde promoção vira código</span>
+    </div>
+    <div class="acoes">
+      <label class="seletor">
+        <span>exemplo</span>
+        <select id="exemplos"></select>
+      </label>
+      <button id="compartilhar" type="button">copiar link</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="painel editor">
+      <div class="barra">
+        <span>programa.vitrine</span>
+        <span id="cursor"></span>
+      </div>
+      <textarea id="codigo" spellcheck="false"></textarea>
+    </section>
+
+    <section class="painel saida">
+      <div class="barra abas" role="tablist">
+        <button role="tab" data-modo="recibo" aria-selected="true">recibo</button>
+        <button role="tab" data-modo="tokens">tokens</button>
+        <button role="tab" data-modo="arvore">árvore</button>
+        <button role="tab" data-modo="ast">AST</button>
+      </div>
+      <pre id="resultado" aria-live="polite"></pre>
+      <button id="status" type="button" class="status carregando">carregando o Python no navegador…</button>
+    </section>
+  </main>
+
+  <footer>
+    O mesmo compilador Python do repositório, rodando no navegador com Pyodide.
+    <a href="https://github.com/joaoplgaspar/vitrine">código-fonte</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/simple.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

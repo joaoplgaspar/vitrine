@@ -1,0 +1,13 @@
+% DONO: Nathan   ·   ESPAÇO: ~0,5 página (é a contribuição central)
+\subsection{Verificação de conflitos}
+% - Cada condição "qtd(p) op c" ou "total op c" vira uma faixa de inteiros
+%   (domínio de intervalos; citar Cousot e Cousot \cite{cousot1977}).
+% - Viabilidade: interseção das faixas + acoplamento
+%   total = soma de qtd(p) * preço(p). Exemplo: qtd(camiseta) >= 3 implica
+%   total >= R$ 149,70, incompatível com total < R$ 100,00.
+% - Pior combinação: busca com/sem cada regra e duas podas (a inviabilidade
+%   só cresce com o conjunto; limite pela soma restante). Exponencial no
+%   pior caso: medir o tempo com 20, 40 e 80 regras.
+% - Condições não analisáveis viram "pode valer sempre" (conservador): nunca
+%   aceita um conflito real, mas pode recusar um programa correto.
+% - Se fizer as tarefas (c04, m02): o que mudou no algoritmo.

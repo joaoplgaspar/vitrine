@@ -6,7 +6,7 @@ que passam de 100%, fretes conflitantes, regras que nunca valem) **antes** de
 existir uma venda, e calcula o recibo ao centavo.
 
 Projeto e Implementação de Compiladores — UNASP, 2026/2.
-João Pedro Gaspar · Juliard Martins · Nathan Kevyn · Lucas Nogueira · Kauã Pablo
+João Pedro Gaspar · Juliard Martins · Nathan Kevyn · Lucas Nogueira · Kauê Pablo
 
 ## Instalação
 
@@ -45,6 +45,16 @@ erro semantico [conflito_120.vitrine:7:23]
    quando promo_a e promo_b se aplicam juntas
 ```
 
+## No navegador
+
+O mesmo compilador roda no navegador (Pyodide), com editor, recibo ao vivo,
+abas de tokens/árvore/AST e link para compartilhar o programa.
+Publicado pelo GitHub Pages a cada push na `main`. Para rodar local:
+
+```bash
+python web/construir.py --servir      # abre em http://localhost:8000
+```
+
 ## Testes e avaliação
 
 ```bash
@@ -63,6 +73,8 @@ exemplos/validos/        3+ programas que rodam, com a saída esperada (.saida)
 exemplos/invalidos/      programas que devem ser recusados
 tests/                   pytest
 avaliacao/               casos rotulados + script de medição
+web/                     compilador no navegador (Pyodide)
+artigo/                  artigo em LaTeX (ACM sigconf), uma seção por arquivo
 ```
 
 ## Divisão de trabalho
@@ -72,8 +84,8 @@ avaliacao/               casos rotulados + script de medição
 | João Pedro Gaspar | gramática, parser, AST |
 | Juliard Martins | semântica: nomes, referências, tipos (`semantica.py`) |
 | Nathan Kevyn | conflitos entre regras (`conflitos.py`); erros |
-| Lucas Nogueira | executor e CLI |
-| Kauã Pablo | testes, exemplos, avaliação |
+| Lucas Nogueira | executor, CLI e site (`web/`) |
+| Kauê Pablo | testes, exemplos, avaliação |
 
 ## Uso de IA
 

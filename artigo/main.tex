@@ -1,0 +1,61 @@
+% Artigo da Vitrine — template ACM sigconf (Overleaf: "ACM Conference Proceedings").
+% Compilar no Overleaf: subir a pasta artigo/ inteira e usar pdfLaTeX + BibTeX.
+\documentclass[sigconf,nonacm]{acmart}
+
+\usepackage[brazilian]{babel}
+\usepackage{listings}
+\usepackage{booktabs}
+
+\lstdefinelanguage{vitrine}{
+  morekeywords={produto,regra,quando,entao,carrinho,calcular,desconto,frete,em,qtd,total,x},
+  morecomment=[l]{\#},
+  sensitive=true
+}
+\lstset{language=vitrine, basicstyle=\ttfamily\footnotesize, keywordstyle=\bfseries,
+        columns=fullflexible, frame=single, inputencoding=utf8,
+        literate={ã}{{\~a}}1 {á}{{\'a}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {õ}{{\~o}}1 {ê}{{\^e}}1}
+
+\title{Vitrine: regras de promoção como linguagem compilada}
+
+\author{João Pedro Gaspar}
+\author{Juliard Martins}
+\author{Nathan Kevyn}
+\author{Lucas Nogueira}
+\author{Kauê Pablo}
+\affiliation{%
+  \institution{Centro Universitário Adventista de São Paulo (UNASP)}
+  \city{São Paulo}
+  \country{Brasil}}
+
+\begin{abstract}
+% TODO (todos, por último): 4–6 frases. Problema, o que a Vitrine faz,
+% a verificação central, o principal número da avaliação, a principal limitação.
+\end{abstract}
+
+\keywords{linguagens de domínio específico, análise estática, compiladores, comércio eletrônico}
+
+\begin{document}
+\maketitle
+
+\input{secoes/01-introducao}
+\input{secoes/02-linguagem}
+\section{Implementação}
+\input{secoes/03a-lexico-sintatico}
+\input{secoes/03b-semantica}
+\input{secoes/03c-conflitos}
+\input{secoes/03d-execucao}
+\input{secoes/04-avaliacao}
+\input{secoes/05-limitacoes}
+\input{secoes/06-conclusao}
+\input{secoes/07-uso-de-ia}
+
+% \nocite{*} lista todas as entradas do .bib mesmo sem \cite no texto.
+% Apagar esta linha quando as seções já citarem as referências de verdade.
+\nocite{*}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{referencias}
+
+\appendix
+\input{secoes/apendice-reproducao}
+
+\end{document}
