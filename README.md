@@ -6,7 +6,7 @@ que passam de 100%, fretes conflitantes, regras que nunca valem) **antes** de
 existir uma venda, e calcula o recibo ao centavo.
 
 Projeto e Implementação de Compiladores — UNASP, 2026/2.
-João Pedro Gaspar · Juliard Martins · Nathan Kevyn · Lucas Nogueira · Kauã Pablo
+João Pedro Gaspar · Juliard Martins · Nathan Kevyn · Lucas Nogueira · Kauê Pablo
 
 ## Instalação
 
@@ -73,9 +73,4 @@ avaliacao/               casos rotulados + script de medição
 | Juliard Martins | semântica: nomes, referências, tipos (`semantica.py`) |
 | Nathan Kevyn | conflitos entre regras (`conflitos.py`); erros |
 | Lucas Nogueira | executor e CLI |
-| Kauã Pablo | testes, exemplos, avaliação |
-
-## Uso de IA
-
-O código inicial foi gerado com Claude (Anthropic) e revisado/modificado pela
-equipe. A declaração completa (etapas e grau de supervisão) está no artigo.
+| Kauê Pablo | testes, exemplos, avaliação |
