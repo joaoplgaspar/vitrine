@@ -1,0 +1,10 @@
+# Duas promoções de 60% que podem valer no mesmo carrinho: 120%.
+produto camiseta = R$ 49,90;
+
+regra promo_a { quando qtd(camiseta) >= 2
+                entao desconto 60% em camiseta; }
+regra promo_b { quando total >= R$ 80,00
+                entao desconto 60% em camiseta; }
+
+carrinho { camiseta x 2; }
+calcular;

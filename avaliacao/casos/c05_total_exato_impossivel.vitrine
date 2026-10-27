@@ -1,0 +1,8 @@
+# esperado: aceita
+# Nenhuma combinação de 49,90 e 29,90 dá exatamente R$ 50,00, então a regra a
+# nunca vale e não há conflito. A análise ignora a integralidade: FALSO POSITIVO.
+produto camiseta = R$ 49,90;
+produto caneca   = R$ 29,90;
+regra a { quando total == R$ 50,00 entao desconto 60% em camiseta; }
+regra b { quando qtd(camiseta) >= 1 entao desconto 60% em camiseta; }
+calcular;

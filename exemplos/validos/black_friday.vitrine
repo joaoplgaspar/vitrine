@@ -1,0 +1,18 @@
+# black_friday.vitrine — faixas exclusivas, desconto geral, vários carrinhos
+produto tenis  = R$ 299,90;
+produto meia   = R$ 19,90;
+produto kit    = (R$ 299,90 + R$ 19,90 * 3) - R$ 40,00;   # preço por expressão
+frete = R$ 24,90;
+
+# 40% + 70% + 10% passaria de 100%, mas as duas primeiras nunca valem juntas:
+# 3 tênis já custam R$ 899,70, então o total não pode ser < R$ 500,00.
+regra tenis_avulso { quando total < R$ 500,00 entao desconto 40% em tenis; }
+regra tenis_3_mais { quando qtd(tenis) >= 3   entao desconto 70% em tenis; }
+
+regra semana_bf   { quando total >= R$ 0,00   entao desconto 10%; }   # vale para tudo
+regra frete_bf    { quando total >= R$ 300,00 entao frete R$ 0,00; }
+
+carrinho pequeno { meia x 2; }
+carrinho medio   { tenis x 1; meia x 3; }
+carrinho grande  { tenis x 3; kit x 1; }
+calcular;

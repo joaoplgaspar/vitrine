@@ -1,0 +1,17 @@
+# promocao_outubro.vitrine — o exemplo canônico do dossiê
+produto camiseta = R$ 49,90;
+produto caneca   = R$ 29,90;
+frete = R$ 15,00;                     # frete padrão, quando nenhuma regra muda
+
+regra leve3 {
+    quando qtd(camiseta) >= 3
+    entao desconto 20% em camiseta;
+}
+
+regra frete_gratis {
+    quando total >= R$ 150,00         # total = subtotal, ANTES dos descontos
+    entao frete R$ 0,00;
+}
+
+carrinho { camiseta x 3; caneca x 1; }
+calcular;

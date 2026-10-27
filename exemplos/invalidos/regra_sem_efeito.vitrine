@@ -1,0 +1,8 @@
+# Sinal trocado: era para ser >= 1. Como está, o desconto em caneca
+# só valeria num carrinho sem caneca.
+produto caneca = R$ 29,90;
+
+regra caneca_promo { quando qtd(caneca) < 1 entao desconto 50% em caneca; }
+
+carrinho { caneca x 1; }
+calcular;

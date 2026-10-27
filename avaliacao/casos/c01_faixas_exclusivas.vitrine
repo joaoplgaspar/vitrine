@@ -1,0 +1,6 @@
+# esperado: aceita
+# 60% + 70% passaria, mas qtd <= 2 e qtd >= 3 nunca valem juntas.
+produto caneca = R$ 29,90;
+regra poucas { quando qtd(caneca) <= 2 entao desconto 60% em caneca; }
+regra muitas { quando qtd(caneca) >= 3 entao desconto 70% em caneca; }
+calcular;

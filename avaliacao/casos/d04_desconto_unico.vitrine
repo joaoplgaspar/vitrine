@@ -1,0 +1,4 @@
+# esperado: recusa conflito_desconto
+produto caneca = R$ 29,90;
+regra erro_digitacao { quando qtd(caneca) >= 1 entao desconto 150% em caneca; }
+calcular;

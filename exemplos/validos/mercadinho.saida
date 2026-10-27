@@ -1,0 +1,12 @@
+================== recibo ==================
+cafe            2 x R$ 18,75        R$ 37,50
+leite          12 x R$ 5,49         R$ 65,88
+pao            13 x R$ 0,85         R$ 11,05
+--------------------------------------------
+subtotal                           R$ 114,43
+desconto 15% em leite               -R$ 9,88
+desconto 25% em pao                 -R$ 2,76
+frete                                R$ 9,90
+TOTAL                              R$ 111,69
+--------------------------------------------
+regras aplicadas: leite_caixa, pao_duzia

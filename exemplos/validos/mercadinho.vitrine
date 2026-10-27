@@ -1,0 +1,15 @@
+# mercadinho.vitrine — arredondamento no centavo e fretes por faixa de valor
+produto cafe    = R$ 18,75;
+produto leite   = R$ 5,49;
+produto pao     = R$ 0,85;
+frete = R$ 9,90;
+
+regra leite_caixa { quando qtd(leite) >= 12 entao desconto 15% em leite; }
+regra pao_duzia   { quando qtd(pao) >= 12   entao desconto 25% em pao; }
+
+# faixas de frete que não se sobrepõem
+regra frete_pedido_pequeno { quando total < R$ 30,00   entao frete R$ 14,90; }
+regra frete_gratis         { quando total >= R$ 120,00 entao frete R$ 0,00; }
+
+carrinho { cafe x 2; leite x 12; pao x 13; }
+calcular;

@@ -1,0 +1,5 @@
+# esperado: recusa regra_morta
+# Era ">= 1": como está, o desconto só valeria sem caneca no carrinho.
+produto caneca = R$ 29,90;
+regra promo { quando qtd(caneca) < 1 entao desconto 50% em caneca; }
+calcular;

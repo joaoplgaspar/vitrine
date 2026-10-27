@@ -1,0 +1,10 @@
+================== recibo ==================
+camiseta        3 x R$ 49,90       R$ 149,70
+caneca          1 x R$ 29,90        R$ 29,90
+--------------------------------------------
+subtotal                           R$ 179,60
+desconto 20% em camiseta           -R$ 29,94
+frete (frete_gratis)                 R$ 0,00
+TOTAL                              R$ 149,66
+--------------------------------------------
+regras aplicadas: leve3, frete_gratis

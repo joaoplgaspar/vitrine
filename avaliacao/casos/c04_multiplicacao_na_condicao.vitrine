@@ -1,0 +1,7 @@
+# esperado: aceita
+# qtd*2 >= 10 é o mesmo que qtd >= 5, exclusivo com qtd <= 2.
+# A análise só entende "qtd(p) op constante": deve gerar FALSO POSITIVO.
+produto caneca = R$ 29,90;
+regra a { quando qtd(caneca) * 2 >= 10 entao desconto 60% em caneca; }
+regra b { quando qtd(caneca) <= 2 entao desconto 60% em caneca; }
+calcular;

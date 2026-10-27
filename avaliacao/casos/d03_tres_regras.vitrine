@@ -1,0 +1,7 @@
+# esperado: recusa conflito_desconto
+# Nenhum par passa de 100%, mas as três juntas sim (40+35+30 = 105).
+produto caneca = R$ 29,90;
+regra a { quando qtd(caneca) >= 1 entao desconto 40% em caneca; }
+regra b { quando qtd(caneca) >= 3 entao desconto 35% em caneca; }
+regra c { quando total >= R$ 100,00 entao desconto 30% em caneca; }
+calcular;

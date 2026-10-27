@@ -1,0 +1,5 @@
+# esperado: aceita
+produto livro = R$ 40,00;
+regra frete_gratis  { quando total >= R$ 100,00 entao frete R$ 0,00; }
+regra frete_pequeno { quando total < R$ 50,00 entao frete R$ 14,90; }
+calcular;

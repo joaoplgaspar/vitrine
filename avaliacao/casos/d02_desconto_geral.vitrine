@@ -1,0 +1,6 @@
+# esperado: recusa conflito_desconto
+# Desconto sem "em" vale para todos e soma com o específico.
+produto caneca = R$ 29,90;
+regra geral { quando total >= R$ 10,00 entao desconto 50%; }
+regra caneca_promo { quando qtd(caneca) >= 1 entao desconto 55% em caneca; }
+calcular;

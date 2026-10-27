@@ -1,0 +1,7 @@
+# Somar dinheiro com quantidade não faz sentido.
+produto caneca = R$ 29,90;
+
+regra estranha { quando total >= R$ 50,00 + qtd(caneca) entao frete R$ 0,00; }
+
+carrinho { caneca x 2; }
+calcular;

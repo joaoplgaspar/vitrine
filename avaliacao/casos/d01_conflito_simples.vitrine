@@ -1,0 +1,6 @@
+# esperado: recusa conflito_desconto
+# Duas regras de 60% que valem juntas com 2 camisetas.
+produto camiseta = R$ 49,90;
+regra a { quando qtd(camiseta) >= 2 entao desconto 60% em camiseta; }
+regra b { quando total >= R$ 80,00 entao desconto 60% em camiseta; }
+calcular;

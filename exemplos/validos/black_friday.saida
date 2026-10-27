@@ -1,0 +1,33 @@
+============= recibo: pequeno ==============
+meia            2 x R$ 19,90        R$ 39,80
+--------------------------------------------
+subtotal                            R$ 39,80
+desconto 10% em meia                -R$ 3,98
+frete                               R$ 24,90
+TOTAL                               R$ 60,72
+--------------------------------------------
+regras aplicadas: semana_bf
+
+============== recibo: medio ===============
+tenis           1 x R$ 299,90      R$ 299,90
+meia            3 x R$ 19,90        R$ 59,70
+--------------------------------------------
+subtotal                           R$ 359,60
+desconto 50% em tenis             -R$ 149,95
+desconto 10% em meia                -R$ 5,97
+frete (frete_bf)                     R$ 0,00
+TOTAL                              R$ 203,68
+--------------------------------------------
+regras aplicadas: tenis_avulso, semana_bf, frete_bf
+
+============== recibo: grande ==============
+tenis           3 x R$ 299,90      R$ 899,70
+kit             1 x R$ 319,60      R$ 319,60
+--------------------------------------------
+subtotal                         R$ 1.219,30
+desconto 80% em tenis             -R$ 719,76
+desconto 10% em kit                -R$ 31,96
+frete (frete_bf)                     R$ 0,00
+TOTAL                              R$ 467,58
+--------------------------------------------
+regras aplicadas: tenis_3_mais, semana_bf, frete_bf

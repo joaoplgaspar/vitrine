@@ -1,0 +1,5 @@
+# esperado: recusa conflito_frete
+produto livro = R$ 40,00;
+regra frete_gratis { quando total >= R$ 100,00 entao frete R$ 0,00; }
+regra frete_promo  { quando qtd(livro) >= 2 entao frete R$ 9,90; }
+calcular;

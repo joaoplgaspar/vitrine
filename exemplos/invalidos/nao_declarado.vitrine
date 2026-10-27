@@ -1,0 +1,6 @@
+produto camiseta = R$ 49,90;
+
+regra leve3 { quando qtd(camisa) >= 3 entao desconto 20% em camiseta; }
+
+carrinho { camiseta x 3; }
+calcular;

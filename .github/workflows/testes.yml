@@ -1,0 +1,20 @@
+# Roda os testes a cada push e pull request (critério "integração contínua").
+name: testes
+
+on: [push, pull_request]
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - run: pytest -v
+      - name: exemplos válidos rodam pelo CLI
+        run: for f in exemplos/validos/*.vitrine; do python -m vitrine "$f"; done

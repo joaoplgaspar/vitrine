@@ -1,0 +1,6 @@
+# esperado: aceita
+# 3 camisetas custam no mínimo R$ 149,70, então total < R$ 100,00 é impossível junto.
+produto camiseta = R$ 49,90;
+regra a { quando qtd(camiseta) >= 3 entao desconto 60% em camiseta; }
+regra b { quando total < R$ 100,00 entao desconto 60% em camiseta; }
+calcular;

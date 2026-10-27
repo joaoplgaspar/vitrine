@@ -1,0 +1,47 @@
+// Gramática da Vitrine (Lark, LALR)
+
+programa: declaracao* carrinho* "calcular" ";"
+
+?declaracao: decl_produto
+           | decl_regra
+           | decl_frete
+
+decl_produto: "produto" IDENT "=" expressao ";"
+decl_frete:   "frete" "=" DINHEIRO ";"
+decl_regra:   "regra" IDENT "{" "quando" condicao "entao" acao ";" "}"
+
+condicao: expressao COMPARADOR expressao
+
+// precedência: expressao (+ -) < termo (* /) < fator
+?expressao: termo
+          | expressao OP_SOMA termo   -> binaria
+
+?termo: fator
+      | termo OP_MULT fator           -> binaria
+
+?fator: NUMERO                        -> numero
+      | DINHEIRO                      -> dinheiro
+      | PERCENTUAL                    -> percentual
+      | TOTAL                         -> total
+      | "qtd" "(" IDENT ")"           -> qtd
+      | "(" expressao ")"
+
+acao: "desconto" PERCENTUAL ["em" IDENT]  -> acao_desconto
+    | "frete" DINHEIRO                    -> acao_frete
+
+carrinho: "carrinho" [IDENT] "{" item* "}"
+item: IDENT "x" NUMERO ";"
+
+TOTAL: "total"
+COMPARADOR: ">=" | "<=" | "==" | ">" | "<"
+OP_SOMA: "+" | "-"
+OP_MULT: "*" | "/"
+
+DINHEIRO: /R\$[ \t]*\d+,\d\d/
+PERCENTUAL.2: /\d+%/    // prioridade sobre NUMERO
+NUMERO: /\d+/
+IDENT: /[a-z_][a-z0-9_]*/
+
+COMENTARIO: /#[^\n]*/
+%ignore COMENTARIO
+%ignore /[ \t\r\n]+/

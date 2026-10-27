@@ -1,0 +1,8 @@
+# Um carrinho de R$ 120,00 cai nas duas regras: frete é 0 ou 9,90?
+produto livro = R$ 40,00;
+
+regra frete_gratis  { quando total >= R$ 100,00 entao frete R$ 0,00; }
+regra frete_promo   { quando qtd(livro) >= 2    entao frete R$ 9,90; }
+
+carrinho { livro x 3; }
+calcular;

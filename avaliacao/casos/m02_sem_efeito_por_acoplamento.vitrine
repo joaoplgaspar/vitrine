@@ -1,0 +1,7 @@
+# esperado: recusa regra_morta
+# Se o total é < R$ 40,00, não cabe nenhuma camiseta (R$ 49,90): o desconto
+# nunca tem efeito. A verificação só olha qtd() direto: deve ESCAPAR.
+produto camiseta = R$ 49,90;
+produto caneca   = R$ 29,90;
+regra promo { quando total < R$ 40,00 entao desconto 50% em camiseta; }
+calcular;

@@ -1,0 +1,5 @@
+# esperado: aceita
+produto caneca = R$ 29,90;
+regra a { quando qtd(caneca) >= 1 entao desconto 60% em caneca; }
+regra b { quando qtd(caneca) >= 2 entao desconto 40% em caneca; }
+calcular;
