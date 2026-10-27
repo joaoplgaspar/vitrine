@@ -28,8 +28,14 @@ jobs:
         with:
           python-version: "3.12"
       - run: python web/construir.py
+      # Nome do artefato inclui a tentativa: ao reexecutar o job, os artefatos
+      # das tentativas anteriores continuam no run e o deploy-pages recusa
+      # mais de um artefato com o mesmo nome.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+          name: github-pages-${{ github.run_attempt }}
       - id: deploy
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
