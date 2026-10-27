@@ -84,10 +84,5 @@ artigo/                  artigo em LaTeX (ACM sigconf), uma seção por arquivo
 | João Pedro Gaspar | gramática, parser, AST |
 | Juliard Martins | semântica: nomes, referências, tipos (`semantica.py`) |
 | Nathan Kevyn | conflitos entre regras (`conflitos.py`); erros |
-| Lucas Nogueira | executor, CLI e site (`web/`) |
+| Lucas Nogueira | executor e CLI |
 | Kauê Pablo | testes, exemplos, avaliação |
-
-## Uso de IA
-
-O código inicial foi gerado com Claude (Anthropic) e revisado/modificado pela
-equipe. A declaração completa (etapas e grau de supervisão) está no artigo.
