@@ -34,6 +34,7 @@ def main(argv: list[str] | None = None) -> int:
     modo = ap.add_mutually_exclusive_group()
     for opcao in ("--tokens", "--arvore", "--ast", "--verificar"):
         modo.add_argument(opcao, action="store_true")
+    ap.add_argument("--saida", help="grava o resultado num arquivo")
     args = ap.parse_args(argv)
 
     caminho = Path(args.arquivo)
@@ -55,7 +56,12 @@ def main(argv: list[str] | None = None) -> int:
             verificar(parser.analisar(texto))
             print("ok: programa aceito")
         else:
-            print(compilar_e_rodar(texto))
+            resultado = compilar_e_rodar(texto)
+            if args.saida:
+                Path(args.saida).write_text(resultado + "\n", encoding="utf-8")
+                print(f"recibo gravado em {args.saida}")
+            else:
+                print(resultado)
     except ErroVitrine as e:
         print(e.formatar(caminho.name), file=sys.stderr)
         return 1

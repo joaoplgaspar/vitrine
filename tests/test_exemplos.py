@@ -37,3 +37,9 @@ def test_exemplo_invalido_e_recusado_com_posicao(arquivo, capsys):
 
 def test_arquivo_inexistente(capsys):
     assert main(["nao_existe.vitrine"]) == 2
+
+
+def test_saida_em_arquivo(tmp_path):
+    destino = tmp_path / "recibo.txt"
+    assert main([str(VALIDOS[0]), "--saida", str(destino)]) == 0
+    assert destino.read_text(encoding="utf-8") == VALIDOS[0].with_suffix(".saida").read_text(encoding="utf-8")
